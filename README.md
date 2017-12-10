@@ -1,6 +1,7 @@
 ## Reproducer for Java 9 DateFormat.format() different behaviour compared to Java 8.
 
-It seems that this test produces different results on Java 9 and Java 8:
+Because of Internationalization Enhancements in JDK 9, `DateFormatformat()`
+produces different results on Java 9 and Java 8:
 
 ```
   @Test
@@ -25,4 +26,5 @@ build custom Bazel version and run:
 bazel test :date_test --host_java_toolchain=@bazel_tools//tools/jdk:jdk9 --java_toolchain=@bazel_tools//tools/jdk:jdk9
 ```
 
-Note, that Maven produces exactly the same results.
+To enforce JDK 8 compaibility, `-Djava.locale.providers=COMPAT,CLDR,SPI` must
+be passed.
