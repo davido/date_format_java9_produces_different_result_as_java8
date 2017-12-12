@@ -1,5 +1,7 @@
 ## Reproducer for Java 9 DateFormat.format() different behaviour compared to Java 8.
 
+[![Build Status](https://travis-ci.org/davido/date_format_java9_produces_different_result_as_java8.svg?branch=master)](https://travis-ci.org/davido/date_format_java9_produces_different_result_as_java8)
+
 Because of Internationalization Enhancements in JDK 9, `DateFormatformat()`
 produces different results on Java 9 and Java 8:
 
